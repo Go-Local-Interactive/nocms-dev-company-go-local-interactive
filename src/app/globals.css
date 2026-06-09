@@ -1,27 +1,67 @@
 @import "tailwindcss";
 
 @theme {
-  /* Base palette — overridden by NoCMS design brief overlay at scaffold time */
-  --color-primary: #5F7A5E;
-  --color-secondary: #B5654A;
-  --color-accent: #C4882B;
-  --color-background: #FAF6EF;
-  --color-surface: #F7F2EB;
-  --color-text: #2C2218;
-  --color-muted: #7A6E62;
+  --color-primary: #000000;
+  --color-secondary: #333333;
+  --color-accent: #dc2626;
+  --color-background: #ffffff;
+  --color-surface: #f5f5f5;
+  --color-text: #000000;
+  --color-muted: #525252;
+  --color-primary-dark: var(--color-primary);
+  --color-primary-light: var(--color-primary);
+  --color-accent-dark: var(--color-accent);
+  --color-accent-light: var(--color-accent);
+  --color-steel-light: var(--color-secondary);
 
-  /* Extended palette */
-  --color-primary-dark: #3E5A3D;
-  --color-primary-light: #DDE8DC;
-  --color-secondary-dark: #8E4A33;
-  --color-secondary-light: #F2DDD4;
-  --color-accent-light: #F5E6C8;
-  --color-sand: #E8DCC8;
-  --color-linen: #F7F2EB;
-  --color-warm-brown: #6B4D3A;
-  --color-rich-brown: #4A3228;
-
-  --font-heading: "Libre Baskerville", ui-serif, Georgia, serif;
-  --font-body: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Respect OS-level reduced-motion preference (WCAG 2.3.3). */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Default keyboard-focus indicator (WCAG 2.4.7) — covers un-classed controls. */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Token-based base typography rhythm; intentionally light so Tailwind
+   utilities still win where the markup sets them. */
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  margin-block: 0.75em 0.5em;
+}
+
+p {
+  margin-block: 0.5em;
+}
+
+/* Bare-token aliases + a neutral grey ramp for designPattern className
+   references (var(--primary-light), var(--neutral-300), …) that use bare
+   custom-property names rather than Tailwind's --color-* tokens. */
+:root {
+  --primary: var(--color-primary);
+  --secondary: var(--color-secondary);
+  --accent: var(--color-accent);
+  --background: var(--color-background);
+  --surface: var(--color-surface);
+  --text: var(--color-text);
+  --muted: var(--color-muted);
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-500: #6b7280;
 }

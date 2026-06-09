@@ -1,0 +1,46 @@
+{
+  "colors": {
+    "primary": "#000000",
+    "secondary": "#333333",
+    "accent": "#dc2626",
+    "background": "#ffffff",
+    "surface": "#f5f5f5",
+    "text": "#000000",
+    "muted": "#525252"
+  },
+  "typography": {
+    "headingFont": "Inter",
+    "bodyFont": "Inter",
+    "monoFont": "JetBrains Mono",
+    "scale": "spacious"
+  },
+  "spacing": "default",
+  "borderRadius": "sm",
+  "shadows": "flat",
+  "mood": "Maximum clarity and accessibility — bold, direct, and uncompromising",
+  "motionStyle": "subtle",
+  "layoutStyle": "editorial-stack",
+  "designRules": [
+    "Maintain WCAG AAA contrast ratios throughout the entire design",
+    "Red accent is reserved for critical actions and important callouts only",
+    "Flat design with no shadows — use borders and spacing for hierarchy",
+    "Large readable type with generous line-height for accessibility",
+    "Avoid decorative elements that reduce clarity or add visual noise"
+  ],
+  "designPatterns": {
+    "card": "<div className=\"bg-surface rounded-xl p-6 border border-text/10 shadow-sm\">",
+    "button": "<a className=\"bg-primary text-background font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition\">",
+    "buttonSecondary": "<a className=\"border border-text/20 text-text font-medium px-6 py-3 rounded-lg hover:bg-surface transition\">",
+    "heading": "<h2 className=\"font-heading text-4xl font-bold text-text tracking-tight\">",
+    "subheading": "<p className=\"text-lg text-text-muted\">",
+    "badge": "<span className=\"text-xs font-medium text-text-muted bg-surface rounded-full px-3 py-1\">",
+    "input": "<input className=\"w-full border border-text/20 rounded-lg px-4 py-3 text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/30 transition\" />",
+    "sectionBg": "bg-background",
+    "sectionAltBg": "bg-surface",
+    "sectionDarkBg": "bg-primary text-background",
+    "navStyle": "bg-background border-b border-text/10",
+    "footerStyle": "bg-surface border-t border-text/10",
+    "iconBox": "<div className=\"h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary\">",
+    "divider": "<div className=\"h-px bg-text/10\">"
+  }
+}
